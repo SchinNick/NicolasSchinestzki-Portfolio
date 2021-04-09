@@ -13,4 +13,63 @@ a {
 
 * {
   box-sizing: border-box;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+@font-face {
+  font-family: "BBAnonymProMedium";
+  src: url('../public/BBAnonymPro-Medium.ttf')
+}
+@font-face {
+  font-family: "BBAnonymProRegular";
+  src: url('../public/BBAnonymPro-SemiRegular.ttf')
+}
+
+.reminderAnim-enter {
+  opacity: 0;
+  transform: translateY(-2rem);
+}
+.reminderAnim-enter-active {
+  transform: none;
+  opacity: 1;
+  transition: all 200ms ease-in;
+}
+.reminderAnim-exit {
+  transform: none;
+  opacity: 1;
+}
+.reminderAnim-exit-active {
+  opacity: 0;
+  transform: translateY(-2rem);
+  transition: all 200ms ease-in;
+}
+
+.editing-enter {
+  opacity: 0;
+  transform: translateY(-1rem);
+}
+.editing-enter-active {
+  transform: none;
+  opacity: 1;
+  transition: all 200ms ease-in;
+}
+.editing-exit {
+  transform: none;
+  opacity: 1;
+}
+.editing-exit-active {
+  opacity: 0;
+  transform: translateY(-1rem);
+  transition: all 200ms ease-in;
+}
+
+
+input, textarea {
+  -webkit-user-select: text; /* Safari */        
+  -moz-user-select: text; /* Firefox */
+  -ms-user-select: text; /* IE10+/Edge */
+  user-select: text; /* Standard */
 }

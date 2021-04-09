@@ -1,0 +1,210 @@
+.modal{
+    z-index: 9999;
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    position: relative;
+    height: 140px;
+    width: 430px;
+    border: 1px solid #555356;
+    border-bottom: 1px solid #787579;
+    border-radius: 10px;
+    background-color: #242328;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 20px;
+}
+.iconCircle{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+    cursor: default;
+}
+.iconShadow{
+    opacity: 0;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 9pt;
+    font-weight: 600;
+    padding-bottom: 5px;
+    background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, .75));
+}
+.iconCircle:hover .iconShadow{
+    opacity: 1;
+}
+.title{
+    color: #e6e6e6;
+    font-weight: 500;
+    font-size: 9.5pt;
+    font-family: "BBAnonymProMedium";
+}
+.info{
+    flex: 1;
+    margin-left: 15px;
+}
+.inputContainer{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+.input{
+    display: block;
+    flex: 1;
+    color: #fff;
+    font-size: 9.5pt;
+    background-color: #302D32;
+    border-radius: 2px;
+    border: none;
+    overflow: visible;
+    padding: 0 5px;
+}
+.input:focus{
+    outline: none !important;
+    box-shadow: 0 0 0 3px #2B6893;
+}
+.inputContainer label{
+    font-family: "BBAnonymProRegular";
+    color: #e6e6e6;
+    font-size: 9pt;
+    margin-right: 5px;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+.button{
+    box-shadow: inset 0 -1px 0 0 #000000;
+    border-radius: 5px;
+    padding: 3px 10px;
+    color: #fff;
+    font-size: 10pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+.ok{
+    min-width: 60px;
+    background: linear-gradient(to bottom, #2079D9 90%, #5295dd);
+}
+.cancel {
+    margin-right: 10px;
+    background: linear-gradient(to bottom, #5C595D 90%, #969397) ;
+}
+.iconConfigContainer{
+    position: absolute;
+    top: 50px;
+    transform: translateY(-50%);
+    left: 95px;
+    background-color: #242328c7;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid #555356;
+    width: 250px;
+    height: 520px;
+    outline: none;;
+}
+.iconConfigContainer::before{
+    content: "";
+    position: absolute;
+    top: calc(50% - 5px);
+    left:-11px;
+    width: 20px;
+    height: 20px;
+    background-color: #242328;
+    border-left: 1px solid #555356;
+    border-bottom: 1px solid #555356;
+    border-radius: 2px;
+    transform: rotateZ(45deg);
+}
+.colorsContainer{
+    width: 90%;
+    margin: 15px auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 0;
+}
+.colorPick span{
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 15px;
+}
+.colorPick{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 2px;
+    width: 36px;
+    height: 35px;
+    border-radius: 20px;
+    outline: none;
+}
+.active{
+    border: 1.5px solid #787579;
+}
+.divider{
+    width: calc(100% - 10px);
+    margin: 15px 5px;
+    height: 1px;
+    background-color: #787579;
+}
+.iconsContainer{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.iconPick{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33px;
+    height: 32px;
+    border-radius: 20px;
+    outline: none;
+}
+.iconPick span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 13px;
+    background-color: #232323;
+}
+.icon{
+    font-size: 10pt;
+}

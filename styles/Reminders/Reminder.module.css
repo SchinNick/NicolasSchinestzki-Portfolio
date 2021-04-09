@@ -1,0 +1,103 @@
+.reminder{
+    display: flex;
+    flex-direction: row;
+
+    min-height: 33px;
+    max-width: 100%;
+    outline: none;
+    margin-top: -1px;
+}
+.reminderCheck{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18px;
+    width: 18px;
+    border-radius: 9px;
+    border: 1px solid #464145;
+    margin: 7px 10px 0 20px;
+}
+.reminderCheck.active{
+    border: 1px solid #7e7a7d;
+}
+.reminderCheck span{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+.reminderInfo{
+    border-bottom: 1px solid #464145;
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+.reminderInfo.active{
+    border-bottom: none;
+}
+.reminderInfoName{
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+    outline: none;
+    color: #fff;
+    font-size: 9.5pt;
+    margin-top: 6px;
+    word-break: break-all;
+    background: none;
+    border: none;
+    padding: none;
+}
+.reminderInfoNotes{
+    margin-top: -2px;
+    margin-left: -.1px;
+    padding: none;
+    outline: none;
+    background: none;
+    border: none;
+    color: #979696;
+}
+.reminderInfoNotes::placeholder{
+    color: #606060;
+    font-weight: bold;
+}
+.reminderButton{
+    height: 22px;
+    background-color: #2F2A2F;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    margin-right: 8px;
+}
+.reminderButton input{
+    background: none;
+    width:60px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 10pt;
+}
+.reminderButton input::placeholder{
+    color: #979696;
+    font-size: 9.5pt;
+}
+.reminderAdvancedInfoPreview {
+    color: #979696;
+    padding: none;
+    font-size: 9pt;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.reminderAdvancedInfoDiv{
+    margin-top: 4px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}

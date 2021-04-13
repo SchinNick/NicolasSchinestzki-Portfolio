@@ -13,6 +13,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "moment": "^2.29.1",
     "next": "10.0.8",
     "react": "17.0.1",
     "react-autosize-textarea": "^7.1.0",

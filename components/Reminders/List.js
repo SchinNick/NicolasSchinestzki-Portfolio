@@ -33,11 +33,14 @@ const List = (props) => {
             props.updateList(id, {new: false, name: editedName})
             setEditing(false)
         }
+        else if(e.key === "Delete" || e.key === "Backspace" && !editing){
+            props.deleteList(id)
+        }
     }
 
     return (
         <div onDoubleClick={() => props.editListInfo(id, {icon, name, color})} onFocus={() => setFocus(true)} onBlur={() => blur()}
-            onClick={() => props.setActiveListIndex(index)} onKeyDown={(e) => handleKeyboard(e)}
+            onClick={() => props.setActiveList()} onKeyDown={(e) => handleKeyboard(e)}
             className={styles.list} style={{ backgroundColor: focused ? "#1C69BB" : (active ? "#43424A" : 'transparent') }}
             tabIndex={-1}>
             <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>

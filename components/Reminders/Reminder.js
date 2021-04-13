@@ -12,6 +12,7 @@ import CalendarOverride from './CalendarOverride'
 const NAME = "NAME"
 const NOTES = "NOTES"
 const Reminder = (props) => {
+    moment.locale("pt-br")
     const mainInput = useRef(null)
 
     //Main reminders properties
@@ -101,7 +102,7 @@ const Reminder = (props) => {
     }
 
     const sendContentToParent = (addNewReminder) => {
-        let dateIsValid = moment(dateInfo).isValid()
+        let dateIsValid = moment(dateInfo, "DD/MM/YY").isValid()
         let timeIsValid = moment(timeInfo, "HH:mm").isValid()
         const content = {
             name: name,
@@ -115,11 +116,8 @@ const Reminder = (props) => {
         }
         props.onReminderChange(props.id, content, addNewReminder)
         setActiveSuggestionBox(null)
-        if (!dateIsValid) setDateInfo("")
-        if (!timeIsValid) {
-            console.log("setando pra null")
-            setTimeInfo(null)
-        }
+        if (!dateIsValid) setDateInfo("") 
+        if (!timeIsValid) setTimeInfo(null)
         if (done) return
         setEditing(false)
     }
@@ -181,10 +179,12 @@ const Reminder = (props) => {
                     :
                     <>
                         <span onClick={() => setEditing(true)} className={styles.reminderInfoName} style={{ width: "fit-content", marginTop: 8, marginLeft: 2 }}>{name}</span>
-                        {notes ? <span className={styles.reminderAdvancedInfoPreview} style={{ fontSize: "8.5pt", marginTop: 3, marginLeft: 1, marginBottom: dateInfo || locationInfo ? 0 : 8 }}>{notes}</span> : null}
-                        {dateInfo || locationInfo ?
+                        {flagged ? <Icon icon="flag" color="#FD9E2B" style={{fontSize: 11, position: "absolute", right: 15, top: 11}}/> : null}
+                        {notes ? <span className={styles.reminderAdvancedInfoPreview} style={{ fontSize: "8.5pt", marginTop: 3, marginLeft: 1}}>{notes}</span> : null}
+                        {dateInfo || locationInfo || props.isOnFilter ?
                             <div className={styles.reminderAdvancedInfoDiv}>
-                                {dateInfo ? <span style={{ marginRight: 5 }} className={styles.reminderAdvancedInfoPreview}>{dateInfo}</span> : null}
+                                {props.isOnFilter ? <span style={{ marginRight: 5 }} className={styles.reminderAdvancedInfoPreview}>{props.listName}</span> : null}
+                                {dateInfo && !props.isOnFilter ? <span style={{ marginRight: 5 }} className={styles.reminderAdvancedInfoPreview}>{dateInfo}</span> : null}
                                 {timeInfo ? <span style={{ marginRight: 5 }} className={styles.reminderAdvancedInfoPreview}>{timeInfo}</span> : null}
                                 {locationInfo ?
                                     <span style={{marginLeft: 3}} className={styles.reminderAdvancedInfoPreview}>

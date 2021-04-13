@@ -72,7 +72,7 @@
 }
 .searchWrapper:focus-within{
     transition: all .5s ease-in-out;
-    box-shadow: 0 0 0 3px #2B6893;
+    box-shadow: 0 0 0 3px #2B6893; 
 }
 .searchWrapper input::placeholder{
     color: #6c6b73;
@@ -86,30 +86,6 @@
     column-gap: 8px;
     width: 100%;
 }
-.filter{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 60px;
-    background-color: #47474E;
-    border-radius: 10px;
-    padding:8px; 
-    color: #A3A2A5;
-    font-size: 10pt;
-    font-weight: 600;
-}
-.filter p{
-    margin: 0;
-}
-.filterTopRow{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    color: #A2A3A7;
-    font-weight: 600;
-    font-size: 15pt;
-}
 .iconspan{
     display: flex;
     align-items: center;
@@ -117,13 +93,6 @@
     height:24px;
     width: 24px;
     border-radius: 12px;
-}
-.filter span p{
-    position: absolute;
-    font-size: 4pt;
-    color: #fff;
-    transform: translateY(1px);
-    text-align: center;
 }
 .lists{
     margin-top: 20px;
@@ -216,4 +185,39 @@
     flex-direction: column;
     flex: 1;
     margin-top: 30px;
+    overflow: scroll;
+}
+.allFilterListName{
+    font-family: "BBAnonymProMedium";
+    letter-spacing: -.03rem;
+    font-size: 13.5pt;
+    margin-left: 20px;
+}
+.reminder{
+    display: flex;
+    flex-direction: row;
+
+    min-height: 33px;
+    max-width: 100%;
+    outline: none;
+    margin-top: -1px;
+}
+.reminder span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18px;
+    width: 18px;
+    border-radius: 9px;
+    margin: 7px 10px 0 20px;
+    background-color: #555054;
+}
+
+.reminderInfo{
+    border-bottom: 1px solid #555054;
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
 }

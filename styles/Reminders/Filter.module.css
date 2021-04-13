@@ -1,0 +1,39 @@
+.filter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60px;
+    border-radius: 10px;
+    padding:8px; 
+    font-size: 10pt;
+    font-weight: 600;
+    cursor: default;
+    outline: none;
+}
+.filter p{
+    margin: 0;
+}
+.filterTopRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #A2A3A7;
+    font-weight: 600;
+    font-size: 15pt;
+}
+.iconspan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:24px;
+    width: 24px;
+    border-radius: 12px;
+}
+.filter span p{
+    position: absolute;
+    font-size: 4pt;
+    color: #fff;
+    transform: translateY(1px);
+    text-align: center;
+}

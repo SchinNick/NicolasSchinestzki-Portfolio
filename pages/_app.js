@@ -77,13 +77,15 @@ import {
   faShapes,
   faBacon,
   faHeart,
-  faStar
+  faStar,
+  faPlus
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faCalendar, faCalendarAlt, faClock
 } from '@fortawesome/free-regular-svg-icons'
 
 library.add(
+  faPlus,
   faClock,
   faSearch,
   faCalendar,

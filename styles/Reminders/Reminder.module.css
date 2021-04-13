@@ -14,7 +14,7 @@
     height: 18px;
     width: 18px;
     border-radius: 9px;
-    border: 1px solid #464145;
+    border: 1px solid #555054;
     margin: 7px 10px 0 20px;
 }
 .reminderCheck.active{
@@ -27,7 +27,7 @@
     border-radius: 5px;
 }
 .reminderInfo{
-    border-bottom: 1px solid #464145;
+    border-bottom: 1px solid #555054;
     flex: 1;
     position: relative;
     display: flex;
@@ -96,7 +96,7 @@
 }
 .reminderAdvancedInfoDiv{
     margin-top: 4px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     display: flex;
     flex-direction: row;
     align-items: baseline;

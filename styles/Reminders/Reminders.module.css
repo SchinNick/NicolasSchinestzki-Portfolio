@@ -95,9 +95,12 @@
     border-radius: 12px;
 }
 .lists{
-    margin-top: 20px;
+    flex: 1;
+    overflow: scroll;
+    margin-bottom: 20px;
 }
 .listsTitle{
+    margin-top: 20px;
     margin-left: 10px;
     font-size: 8.5pt;
     font-weight: 600;

@@ -128,18 +128,18 @@ export default function Reminders() {
             ...content
         }
         setLists([...listsCopy])
-        setActiveList({...listsCopy[index]})
+        setActiveList({ ...listsCopy[index] })
     }
 
     const deleteList = (id) => {
         let listsCopy = lists
         let index = listsCopy.findIndex(l => l.id === id)
-        if(listsCopy.length >= 2){
+        if (listsCopy.length >= 2) {
             listsCopy = listsCopy.filter(l => l.id !== id)
             setLists([...listsCopy])
-            setActiveList({...lists[index === 0 ? 1 : 0]}) 
+            setActiveList({ ...lists[index === 0 ? 1 : 0] })
         }
-        
+
     }
 
     // FILTERS LOGIC
@@ -309,7 +309,7 @@ export default function Reminders() {
                     })
                 }
                 removeReminder = true;
-
+                console.log("done")
                 //NOT DONE BUT VALID
             } else if (content.name.length > 0) {
                 list.reminders[reminderIndex] = {
@@ -318,7 +318,7 @@ export default function Reminders() {
                 }
             }
 
-            if (removeReminder) list.reminders.filter(r => r.id !== id)
+            if (removeReminder) list.reminders = list.reminders.filter(r => r.id !== id)
             if (addNewReminder) addReminder()
 
             setActiveList({ ...list })
@@ -389,16 +389,14 @@ export default function Reminders() {
                             <Filter isFocused={f.name === filterFocused} key={f.name} {...f} />
                         ))}
                     </div>
+                    <p className={styles.listsTitle}>My Lists</p>
                     <div className={styles.lists}>
-                        <p className={styles.listsTitle}>My Lists</p>
-                        <div style={{ marginTop: 4 }}>
-                            {lists.map((list, index) => (
-                                <List key={`${index}_${list.name}`} setActiveList={() => changeList(list)} {...list}
-                                    index={index} active={list === activeList}
-                                    updateList={(id, content) => updateList(id, content)} editListInfo={(id, listInfo) => listInfoRef.current?.show(id, listInfo)}
-                                    deleteList={(id) => deleteList(id)} />
-                            ))}
-                        </div>
+                        {lists.map((list, index) => (
+                            <List key={`${index}_${list.name}`} setActiveList={() => changeList(list)} {...list}
+                                index={index} active={list === activeList}
+                                updateList={(id, content) => updateList(id, content)} editListInfo={(id, listInfo) => listInfoRef.current?.show(id, listInfo)}
+                                deleteList={(id) => deleteList(id)} />
+                        ))}
                     </div>
                     <span className={styles.addListContainer} onClick={() => addList()}>
                         <span>+</span>

@@ -48,7 +48,7 @@ const Reminder = (props) => {
     }, [done])
 
     useEffect(() => {
-        if (moment(dateInfo).isValid() && timeInfo === null) {
+        if (moment(dateInfo, "DD/MM/YYYY").isValid() && timeInfo === null) {
             setTimeInfo("")
         }
     }, [dateInfo])
